@@ -155,6 +155,17 @@ ul li {
 	transform: translate(-50%, -50%);
   }
   
+  .button {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: #4CAF50;
+	color: #FFFFFF;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 8px;
+  }
+  
   @keyframes bubble {
 	from {
 	  transform: translate(0, 0);
