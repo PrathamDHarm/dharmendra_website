@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Treasure Hunt Game</title>
+    <style>
+      /* Add some styles to make the game look good */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 50px;
+      }
+      #game-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+      }
+      #game-board {
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        grid-template-rows: repeat(10, 50px);
+        gap: 2px;
+        background-color: #eee;
+        padding: 10px;
+        border: 2px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .cell {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.2s;
+      }
+      .cell:hover {
+        background-color: #f9f9f9;
+      }
+      .treasure {
+        background-color: #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Treasure Hunt Game</h1>
+    <div id="game-container">
+      <div id="game-board"></div>
+    </div>
+
+    <script>
+      // Add the game logic using JavaScript
+      const board = document.getElementById("game-board");
+
+      // Generate the game board
+      for (let i = 0; i < 100; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        board.appendChild(cell);
+      }
+
+      // Add the treasure to a random cell
+      const treasureCell = Math.floor(Math.random() * 100);
+      board.children[treasureCell].classList.add("treasure");
+
+      // Handle the click event on each cell
+      board.addEventListener("click", (event) => {
+        const clickedCell = event.target;
+
+        // Check if the clicked cell is the treasure
+        if (clickedCell.classList.contains("treasure")) {
+          alert("Congratulations! You found the treasure.");
+          window.location.href = "index.html"; // Redirect the user back to the home page
+        } else {
+          clickedCell.style.backgroundColor = "#d9534f";
+          clickedCell.style.transition = "background-color 0.5s";
+        }
+      });
+    </script>
+  </body>
+</html>
