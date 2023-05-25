@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+    text-size-adjust:initial;
+    background:url(images/background.jpg);
+}
+p{
+    align-content: left;
+    padding-left: 100px;
+    width: 1500px;
+    text-align:justify;
+}
+.content{
+    margin-top: 150px;
+}
+img{
+    image-resolution: 50px;
+    size: 10px;
+    padding: 10px;
+    width: 100px;    
+}
